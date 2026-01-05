@@ -61,16 +61,16 @@ All Serenity reports are automatically published using **GitHub Pages** and can 
 
 ### 🔹 Full Serenity Reports
 
-- **Chrome Results**
-- **Edge Results**
-- **Firefox Results**
-- **Safari Results**
+- [Chrome Results](https://crod37.github.io/CBTW-Demo/chrome/)
+- [Edge Results](https://crod37.github.io/CBTW-Demo/edge/)
+- [Firefox Results](https://crod37.github.io/CBTW-Demo/firefox/)
+- [Safari Results](https://crod37.github.io/CBTW-Demo/safari/)
 
 ### 🔹 Serenity Summary Reports
 
 High-level execution summaries are available here:
 
-- **Chrome Summary**
-- **Edge Summary**
-- **Firefox Summary**
-- **Safari Summary**
+- [Chrome Summary](https://crod37.github.io/CBTW-Demo/chrome/serenity-summary.html)
+- [Edge Summary](https://crod37.github.io/CBTW-Demo/edge/serenity-summary.html)
+- [Firefox Summary](https://crod37.github.io/CBTW-Demo/firefox/serenity-summary.html)
+- [Safari Summary](https://crod37.github.io/CBTW-Demo/safari/serenity-summary.html)
