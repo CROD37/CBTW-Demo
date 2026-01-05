@@ -1,4 +1,4 @@
-package starter.petsotore;
+package starter.petstore;
 
 public class Pet {
     private String name;

@@ -7,7 +7,7 @@ import io.restassured.http.ContentType;
 import io.restassured.mapper.ObjectMapperType;
 import net.serenitybdd.rest.SerenityRest;
 import org.hamcrest.Matchers;
-import starter.petsotore.Pet;
+import starter.petstore.Pet;
 
 
 import static net.serenitybdd.rest.SerenityRest.then;
