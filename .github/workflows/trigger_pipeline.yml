@@ -22,7 +22,7 @@ on:
 
 jobs:
   trigger-tests:
-    uses: CROD37/CBTW-Demo/.github/workflows/chrome_pipeline.yml@main
+    uses: CROD37/CBTW-Demo/.github/workflows/run_test_cases.yml@main
     with:
       cucumber_tags: ${{ inputs.cucumber_tags }}
       browser: ${{ inputs.browser }}
