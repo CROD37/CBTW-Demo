@@ -2,6 +2,7 @@ name: Edge Pipeline
 
 on:
   workflow_call:
+    inputs:
       cucumber_tags:
         type: string
         description: 'Filter cucumber tags'

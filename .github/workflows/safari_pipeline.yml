@@ -3,37 +3,25 @@ name: Safari Pipeline
 on:
   workflow_call:
     inputs:
-      site:
-        description: 'which site to test'
-        required: true
-        type: string
       cucumber_tags:
         type: string
         description: 'Filter cucumber tags'
         required: false
-    secrets:
-      GMAIL_CLIENT_ID:
-        required: true
-      GMAIL_CLIENT_SECRET:
-        required: true
 
 jobs:
   build:
 
     runs-on: macos-latest
-    env:
-      GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
-      GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up JDK 20
+      - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
           distribution: 'oracle' # See 'Supported distributions' for available options
-          java-version: '20'
+          java-version: '17'
           cache: 'maven'
 
       - name: Cache local Maven repository
@@ -49,13 +37,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: mvn clean install -DskipTests
 
-      - name: Run Serenity test UAT
-        if: github.event.inputs.site == 'UAT'
+      - name: Run Serenity test
         run: mvn clean verify -D cucumber.filter.tags="${{ github.event.inputs.cucumber_tags }}" -D environment=safari -D webdriver.base.url=https://dotcom-uat.dxp.convatec.com/ -D failsafe.rerunFailingTestsCount=1
-
-      - name: Run Serenity test Prod
-        if: github.event.inputs.site == 'production'
-        run: mvn clean verify -D cucumber.filter.tags="${{ github.event.inputs.cucumber_tags }}" -D environment=safari -D webdriver.base.url=https://www.convatec.com/ -D failsafe.rerunFailingTestsCount=1
 
       - name: Deploy report to Github Pages
         if: always()
@@ -64,7 +47,7 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./target/site/serenity
-          DESTINATION_DIR: ${{ github.event.inputs.site }}/safari
+          DESTINATION_DIR: /safari
 
       - name: Deploy report to Github Pages 2 try
         if: failure()
@@ -73,4 +56,4 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./target/site/serenity
-          DESTINATION_DIR: ${{ github.event.inputs.site }}/safari
+          DESTINATION_DIR: /safari
