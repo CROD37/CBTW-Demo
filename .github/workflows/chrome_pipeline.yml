@@ -3,6 +3,10 @@ name: Chrome Pipeline
 on:
   workflow_call:
     inputs:
+      browser:
+        type: string
+        description: 'Filter cucumber tags'
+        required: true
       cucumber_tags:
         type: string
         description: 'Filter cucumber tags'
@@ -38,7 +42,7 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Run Test cases
-        run: mvn clean verify -D cucumber.filter.tags="${{ github.event.inputs.cucumber_tags }}" -D environment=chrome-headless -D webdriver.base.url=https://dotcom-uat.dxp.convatec.com/ -D failsafe.rerunFailingTestsCount=1 -D cucumber.execution.parallel.enabled=true
+        run: mvn clean verify -D cucumber.filter.tags="${{ inputs.cucumber_tags }}" -D environment="${{ inputs.browser }}" -D webdriver.base.url=https://dotcom-uat.dxp.convatec.com/ -D failsafe.rerunFailingTestsCount=1 -D cucumber.execution.parallel.enabled=true
 
       - name: Deploy report to Github Pages
         if: always()

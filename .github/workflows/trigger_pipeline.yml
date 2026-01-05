@@ -13,6 +13,7 @@ on:
           - firefox
           - safari
           - all
+          - local
       cucumber_tags:
         type: string
         description: Filter cucumber tags
@@ -20,26 +21,11 @@ on:
         default: '@Regression'
 
 jobs:
-  trigger-tests-with-chrome:
-    if: github.event.inputs.browser == 'chrome' || github.event.inputs.browser == 'all'
+  trigger-tests:
     uses: CROD37/CBTW-Demo/.github/workflows/chrome_pipeline.yml@main
     with:
-      cucumber_tags: ${{ github.event.inputs.cucumber_tags }}
-  trigger-tests-with-edge:
-    if: github.event.inputs.browser == 'edge' || github.event.inputs.browser == 'all'
-    uses: CROD37/CBTW-Demo/.github/workflows/edge_pipeline.yml@main
-    with:
-      cucumber_tags: ${{ github.event.inputs.cucumber_tags }}
-  trigger-tests-with-firefox:
-    if: github.event.inputs.browser == 'firefox' || github.event.inputs.browser == 'all'
-    uses: CROD37/CBTW-Demo/.github/workflows/firefox_pipeline.yml@main
-    with:
-      cucumber_tags: ${{ github.event.inputs.cucumber_tags }}
-  trigger-tests-with-safari:
-    if: github.event.inputs.browser == 'safari' || github.event.inputs.browser == 'all'
-    uses: CROD37/CBTW-Demo/.github/workflows/safari_pipeline.yml@main
-    with:
-      cucumber_tags: ${{ github.event.inputs.cucumber_tags }}
+      cucumber_tags: ${{ inputs.cucumber_tags }}
+      browser: ${{ inputs.browser }}
 
   update-readme:
     if: always()
