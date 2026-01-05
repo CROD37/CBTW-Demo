@@ -30,7 +30,7 @@ jobs:
   update-readme:
     if: always()
     runs-on: ubuntu-latest
-    needs: [ trigger-tests-with-chrome, trigger-tests-with-edge, trigger-tests-with-firefox, trigger-tests-with-safari ]
+    needs: trigger-tests
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
