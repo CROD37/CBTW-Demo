@@ -12,9 +12,9 @@ on:
         required: false
     secrets:
       BROWSERSTACK_USER:
-        requerid: true
+        required: true
       BROWSERSTACK_KEY:
-        requerid: true
+        required: true
 
 jobs:
   build:
@@ -55,7 +55,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./target/site/serenity
-          DESTINATION_DIR: chrome
+          DESTINATION_DIR: ${{ inputs.browser }}
 
       - name: Deploy report to Github Pages 2 try
         if: failure()
@@ -64,4 +64,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: ./target/site/serenity
-          DESTINATION_DIR: chrome
+          DESTINATION_DIR: ${{ inputs.browser }}
