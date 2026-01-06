@@ -10,11 +10,11 @@ on:
       cucumber_tags:
         type: string
         required: false
-      secrets:
-        BROWSERSTACK_USER:
-          requerid: true
-        BROWSERSTACK_KEY:
-          requerid: true
+    secrets:
+      BROWSERSTACK_USER:
+        requerid: true
+      BROWSERSTACK_KEY:
+        requerid: true
 
 jobs:
   build:
