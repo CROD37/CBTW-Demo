@@ -8,11 +8,8 @@ on:
         description: Which browser to test
         required: true
         options:
-          - chrome
-          - edge
-          - firefox
-          - safari
-          - all
+          - run_on_browserstack_Windows11
+          - run_on_browserstack_Mac_Monterey
           - local
       cucumber_tags:
         type: string

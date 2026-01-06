@@ -1,4 +1,4 @@
-@Regression
+@Regression @ApiTesting
 Feature: Find a pet in the pet store
 
   As a pet store customer
