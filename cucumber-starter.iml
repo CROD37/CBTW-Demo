@@ -107,7 +107,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: commons-codec:commons-codec:1.19.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-io:commons-io:2.20.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents:httpcore:4.4.13" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.seleniumhq.selenium:selenium-java:4.38.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.seleniumhq.selenium:selenium-devtools-v140:4.38.0" level="project" />
@@ -227,6 +226,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: io.rest-assured:xml-path:5.5.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.groovy:groovy-json:4.0.23" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.groovy:groovy-xml:4.0.23" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: net.serenity-bdd:serenity-browserstack:4.3.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.apache.httpcomponents:httpcore:4.4.15" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: com.browserstack:browserstack-local-java:1.0.6" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.json:json:20231013" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="18451b18-7990-40d0-8439-457d9256783e" />
