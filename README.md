@@ -1,13 +1,18 @@
-# 🚀 Serenity BDD API Automation – Swagger Petstore
+# 🚀 Serenity BDD Automation Framework – API & Functional Testing
 
-This project is an **API automation framework** built with **Java, Serenity BDD, Cucumber, and RestAssured**.  
-It validates the behavior of the **Swagger Petstore API**, following **BDD principles**, **ISTQB best practices**, and **clean test design**.
+This project is a **test automation framework** built with **Java, Serenity BDD, Cucumber, RestAssured, and Selenium**
+.  
+It covers both **API automation** and **functional UI testing**, following **BDD principles**, **Scrum mindset**, and **
+ISTQB best practices**.
 
-The framework is designed as a **demo project for technical interviews** and showcases:
-- Positive and negative API scenarios
+The framework is designed as a **demo project for technical interviews**, showcasing:
+
+- API and UI automation in a single Serenity project
+- Positive and negative scenarios
 - Business-readable BDD features
-- Maintainable and scalable automation architecture
-- Automated test reports published using **GitHub Pages**
+- Clean architecture using Page Objects and Step Definitions
+- Cross-browser execution (local & BrowserStack)
+- Automated test reports published via **GitHub Pages**
 
 ---
 
@@ -17,60 +22,75 @@ The framework is designed as a **demo project for technical interviews** and sho
 - **Maven**
 - **Serenity BDD**
 - **Cucumber (BDD)**
+- **Selenium WebDriver**
 - **RestAssured**
+- **BrowserStack**
+- **GitHub Actions (CI/CD)**
 - **GitHub Pages (Reporting)**
 
 ---
 
-## 📌 API Under Test
+## 📌 Systems Under Test
+
+### 🔹 API
 
 **Swagger Petstore API**
 
 - Base URL: https://petstore.swagger.io/v2
+- Public API used to demonstrate REST API automation.
 
+### 🔹 UI (Functional Testing)
 
-This public API allows CRUD operations for pets and is widely used for API automation demonstrations.
+- Web applications tested through **cross-browser functional scenarios**
+- Executed locally or remotely using **BrowserStack**
 
 ---
 
 ## 📂 Project Structure
+
 ```
 src
 └── test
 ├── java
-│   └── starter
-│       ├── stepdefinitions
-│       │   └── ApiTestingStepDefinitions.java
-│       └── petstore
-│           └── Pet.java
+│ └── starter
+│ ├── stepdefinitions
+│ │ ├── ApiTestingStepDefinitions.java
+│ │ └── FunctionalStepDefinitions.java
+│ ├── pages
+│ │ └── LoginPage.java
+│ └── petstore
+│   └── Pet.java
+│ └── steps
+│   └── LoginSteps.java
 └── resources
-│   └── features
-│       └──apiTesting.feature
+├── features
+│ ├── apiTesting.feature
+│ └── functionalTesting.feature
+└── serenity.conf
 ```
 
 ## ▶️ How to Execute the Tests
 
-Run all API tests using Maven:
+Run all tests using Maven:
 
 ```bash
 mvn clean verify
 ```
+
 ## 📊 Test Reports (GitHub Pages)
 
 All Serenity reports are automatically published using **GitHub Pages** and can be accessed online.
 
 ### 🔹 Full Serenity Reports
 
-- [Chrome Results](https://crod37.github.io/CBTW-Demo/chrome/)
-- [Edge Results](https://crod37.github.io/CBTW-Demo/edge/)
-- [Firefox Results](https://crod37.github.io/CBTW-Demo/firefox/)
-- [Safari Results](https://crod37.github.io/CBTW-Demo/safari/)
+- [browserstack_Mac_Monterey Results](https://crod37.github.io/CBTW-Demo/chrome/run-on-browserstack_Mac_Monterey)
+- [browserstack_Windows11 Results](https://crod37.github.io/CBTW-Demo/chrome/run_on_browserstack_Windows11)
+- [local Results](https://crod37.github.io/CBTW-Demo/chrome/local)
 
 ### 🔹 Serenity Summary Reports
 
 High-level execution summaries are available here:
 
-- [Chrome Summary](https://crod37.github.io/CBTW-Demo/chrome/serenity-summary.html)
-- [Edge Summary](https://crod37.github.io/CBTW-Demo/edge/serenity-summary.html)
-- [Firefox Summary](https://crod37.github.io/CBTW-Demo/firefox/serenity-summary.html)
-- [Safari Summary](https://crod37.github.io/CBTW-Demo/safari/serenity-summary.html)
+- [browserstack_Mac_Monterey Summary](https://crod37.github.io/CBTW-Demo/chrome/run-on-browserstack_Mac_Monterey/serenity-summary.html)
+- [browserstack_Windows11 Summary](https://crod37.github.io/CBTW-Demo/chrome/run_on_browserstack_Windows11serenity-summary.html)
+- [local Summary](https://crod37.github.io/CBTW-Demo/chrome/localserenity-summary.html)
