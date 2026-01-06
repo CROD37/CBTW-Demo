@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="2" failures="0" name="Login to OrangeHRM portal" skipped="0" tests="2" time="67.22" timestamp="2026-01-06 06:17:53"><testcase name="Login with valid credentials"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver
+starter.steps.LoginSteps.openLoginPage(LoginSteps.java:20)
+starter.stepdefinitions.FuntionalTestingStepDefinitions.marioIsOnTheLoginPage(FuntionalTestingStepDefinitions.java:15)
+✽.Mario is on the OrangeHRM login page(classpath:features/funtionalTesting.feature:10)
+</system-err></testcase><testcase name="Login with invalid credentials"><error message="Could not instantiate class org.openqa.selenium.chrome.ChromeDriver" type="net.thucydides.core.webdriver.DriverConfigurationError">Could not instantiate class org.openqa.selenium.chrome.ChromeDriver</error><system-err>Could not instantiate class org.openqa.selenium.chrome.ChromeDriver
+starter.steps.LoginSteps.openLoginPage(LoginSteps.java:20)
+starter.stepdefinitions.FuntionalTestingStepDefinitions.marioIsOnTheLoginPage(FuntionalTestingStepDefinitions.java:15)
+✽.Mario is on the OrangeHRM login page(classpath:features/funtionalTesting.feature:16)
+</system-err></testcase></testsuite>
